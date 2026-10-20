@@ -1,0 +1,21 @@
+{
+  "name": "qa-playwright-saucedemo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfolio QA: testes E2E da aplicação pública SauceDemo com Playwright e TypeScript",
+  "scripts": {
+    "test": "playwright test",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:regression": "playwright test --grep @regression",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "report": "playwright show-report",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run typecheck && npm test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.0",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.9.0"
+  }
+}
