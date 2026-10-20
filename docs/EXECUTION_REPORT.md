@@ -41,6 +41,17 @@ Execução baseline em Chromium com oito workers. O typecheck anterior (`tsc --n
 
 Esses diretórios são ignorados pelo Git, preservando a cópia local sem versionar artefatos temporários ou volumosos.
 
+## Validação de CI/CD
+
+- Repositório privado: `https://github.com/jvcim/qa-playwright-saucedemo`;
+- Workflow: `Playwright E2E`, acionado por `push` na branch `main`;
+- Execução validada: [run #2](https://github.com/jvcim/qa-playwright-saucedemo/actions/runs/39518081499), commit `2796db4`, 20/10/2026 às 20:55 BRT;
+- Resultado: `Success`; duração total de 43 s; job `e2e` concluído em 40 s;
+- Artefato gerado: `playwright-html-report` (197 KB, SHA-256 `49ae834f95be0f0d21f7a246f3f1672b709a8612da11779f8de3c8851ff171ae`);
+- O upload de `test-results/` agora é opcional quando não há falhas; como a suíte foi aprovada, não houve artefato de trace/vídeo/screenshot.
+
+O GitHub reportou avisos de plataforma sobre ações que ainda usam Node.js 20 internamente e sobre a futura migração do rótulo `ubuntu-latest`. Nenhum deles afetou a instalação, o typecheck, a execução ou o artefato desta run.
+
 ## Conclusão
 
 A primeira execução real da suíte foi aprovada integralmente. Nenhuma falha de automação, ambiente ou aplicação foi observada; portanto, nenhuma correção, reexecução ou ticket de Bug foi necessária. Os resultados Pass foram registrados separadamente do status Kanban, que permanece voltado ao fluxo de revisão.
@@ -49,5 +60,4 @@ A primeira execução real da suíte foi aprovada integralmente. Nenhuma falha d
 
 - Manter asserções atuais, que cobrem URL, visibilidade, conteúdo de mensagens e ordenação;
 - Considerar reduzir a concorrência em execuções futuras se o ambiente público apresentar instabilidade, embora esta execução paralela tenha sido estável;
-- A validação real do GitHub Actions foi analisada em 20/10/2026, mas não pôde ser executada: a cópia local não possui repositório Git/remoto e não há repositório SauceDemo acessível na conexão GitHub;
-- Após criar ou conectar um repositório, executar o workflow `Playwright E2E` na branch `main` e registrar o link da run e os artefatos gerados.
+- Acompanhar as próximas versões das ações oficiais do GitHub para eliminar os avisos de depreciação de Node.js 20 sem alterar uma pipeline atualmente aprovada.

@@ -56,17 +56,18 @@ Demonstrar um ciclo profissional de QA para a aplicação pública SauceDemo: pl
 - Primeira execução baseline em Chromium concluída: 10 Passed, 0 Failed, 0 Blocked e 0 Not Run em 12,5 s;
 - Relatório HTML local gerado em `playwright-report/index.html`; nenhum artefato de falha foi produzido;
 - Resultados reais registrados nos Test Cases do Jira, separados do fluxo Kanban.
+- Repositório privado publicado em `https://github.com/jvcim/qa-playwright-saucedemo`;
+- GitHub Actions validado na run #2: workflow `Playwright E2E` aprovado em 43 s, com relatório HTML publicado como artefato.
 
 ## Atividades pendentes
 
-- Criar ou conectar o repositório GitHub do SauceDemo e validar a execução real do GitHub Actions (`SDQAE-18`); a validação foi impedida em 20/10/2026 porque a cópia local não possui `.git`/remoto e nenhum repositório SauceDemo está acessível na conexão GitHub;
 - Consolidar o relatório final;
 - Publicar no GitHub apenas após autorização explícita.
 
 ## Decisões e restrições
 
 - A suíte foi executada uma vez em Chromium e todos os 10 testes foram aprovados; não houve reexecução ou correção;
-- Não há bugs ou integração automatizada Jira–GitHub confirmados; há evidência local no relatório HTML do Playwright;
+- Não há bugs ou integração automatizada Jira–GitHub confirmados; há evidências local e de CI no relatório HTML do Playwright;
 - O uso de `standard_user` e demais contas é limitado às credenciais públicas de demonstração da SauceDemo;
 - O Jira utilizado é exclusivamente a instância pessoal; `SDQAE` é o projeto operacional e `SDQA` é histórico.
 - O status Kanban acompanha o fluxo de trabalho e não representa o resultado do teste; os resultados devem permanecer separados como `Pass`, `Fail`, `Blocked` ou `Not Run`.
@@ -77,4 +78,4 @@ Nenhuma divergência comprovada foi identificada entre os 10 IDs do catálogo e 
 
 ## Próxima etapa recomendada
 
-Criar ou conectar o repositório GitHub do SauceDemo, validar a primeira run do GitHub Actions e, então, consolidar o relatório final do portfólio.
+Consolidar o relatório final do portfólio e, quando desejado, avaliar a publicação pública do repositório.
