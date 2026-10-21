@@ -76,6 +76,8 @@ Essa separação deixa a suíte mais legível e reduz o impacto de mudanças na 
 
 Os detalhes de cada caso podem ser consultados no [catálogo de testes](TEST_CATALOG.md) e na [matriz de rastreabilidade](TRACEABILITY_MATRIX.md).
 
+Para uma visão pública do quadro final, das histórias, dos casos e das tarefas técnicas sem exigir acesso ao Jira, consulte o [snapshot público do Jira](JIRA_PROJECT_SNAPSHOT.md).
+
 ## Evidências e qualidade da execução
 
 A execução local gera um relatório HTML do Playwright. Quando uma falha ocorre, a configuração também preserva screenshot, vídeo e trace para investigação. A execução aprovada mais recente não produziu artefatos de falha porque todos os cenários passaram.
