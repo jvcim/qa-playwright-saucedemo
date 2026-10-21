@@ -66,7 +66,7 @@ Em Linux/CI, as dependências do navegador podem ser instaladas via `npx playwri
 São utilizadas exclusivamente credenciais **públicas de teste** do SauceDemo, documentadas pela Sauce Labs (`standard_user` / `secret_sauce`). Para substituí-las, defina `STANDARD_USER`, `STANDARD_PASSWORD` e, opcionalmente, `BASE_URL` como variáveis de ambiente. Não registre credenciais pessoais no Git.
 
 ## CI/CD
-O workflow executa a checagem de TypeScript e a suíte Playwright em cada push ou pull request na branch `main`. A [run #2 do GitHub Actions](https://github.com/jvcim/qa-playwright-saucedemo/actions/runs/39518081499) foi aprovada em 43 s e publicou o relatório HTML como artefato. O repositório permanece privado nesta etapa.
+O workflow executa a checagem de TypeScript e a suíte Playwright em cada push ou pull request na branch `main`. A [run #4 do GitHub Actions](https://github.com/jvcim/qa-playwright-saucedemo/actions/runs/39528450078) foi aprovada para a versão com 17 testes e publicou o relatório HTML como artefato. O repositório é público; o Jira operacional permanece privado.
 
 ## Estado da execução
 **Execuções locais validadas:** baseline de 16/10/2026 com 10 Passed em 12,5 s; ampliação de 20/10/2026 com 17 testes no Chromium, 17 Passed e 0 Failed em 12,2 s. O relatório HTML local é gerado em `playwright-report/index.html`; detalhes rastreáveis estão em `docs/EXECUTION_REPORT.md`.

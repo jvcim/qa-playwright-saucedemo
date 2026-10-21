@@ -56,13 +56,12 @@ Demonstrar um ciclo profissional de QA para a aplicação pública SauceDemo: pl
 - Ampliação de cobertura executada em 20/10/2026: 17 Passed, 0 Failed, 0 Blocked e 0 Not Run em 12,2 s;
 - Relatório HTML local gerado em `playwright-report/index.html`; nenhum artefato de falha foi produzido;
 - Resultados reais registrados nos Test Cases do Jira, separados do fluxo Kanban.
-- Repositório privado publicado em `https://github.com/jvcim/qa-playwright-saucedemo`;
+- Repositório público publicado em `https://github.com/jvcim/qa-playwright-saucedemo`;
 - GitHub Actions validado na run #2: workflow `Playwright E2E` aprovado em 43 s, com relatório HTML publicado como artefato.
 
 ## Atividades pendentes
 
-- Consolidar o relatório final;
-- Publicar no GitHub apenas após autorização explícita.
+Não há pendências para o escopo finalizado. Melhorias futuras devem ser tratadas como uma nova versão do portfólio.
 
 ## Decisões e restrições
 
@@ -78,4 +77,4 @@ Nenhuma divergência comprovada foi identificada entre os 17 IDs do catálogo e 
 
 ## Próxima etapa recomendada
 
-Consolidar o relatório final do portfólio e, quando desejado, avaliar a publicação pública do repositório.
+Manter a evidência atual como versão de portfólio e planejar futuras ampliações de cobertura em uma nova etapa.

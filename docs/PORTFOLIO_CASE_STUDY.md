@@ -88,7 +88,7 @@ Além da execução local, o GitHub Actions executa typecheck e a suíte Playwri
 
 O escopo planejado foi entregue com 17 casos automatizados, todos aprovados nas execuções registradas. Não foram abertos Bugs porque nenhum defeito real foi identificado.
 
-Melhorias futuras possíveis, sem serem pendências deste projeto, incluem execução em Firefox e WebKit, cenários de detalhe de produto e cancelamento do checkout. O repositório permanece privado nesta etapa.
+Melhorias futuras possíveis, sem serem pendências deste projeto, incluem execução em Firefox e WebKit, cenários de detalhe de produto e cancelamento do checkout. O repositório é público; o quadro Jira operacional permanece privado e está representado pelo snapshot versionado neste projeto.
 
 ## Documentos relacionados
 

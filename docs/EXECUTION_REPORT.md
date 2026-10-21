@@ -63,7 +63,7 @@ Esses diretórios são ignorados pelo Git, preservando a cópia local sem versio
 
 ## Validação de CI/CD
 
-- Repositório privado: `https://github.com/jvcim/qa-playwright-saucedemo`;
+- Repositório público: `https://github.com/jvcim/qa-playwright-saucedemo`;
 - Workflow: `Playwright E2E`, acionado por `push` na branch `main`;
 - Execução validada: [run #2](https://github.com/jvcim/qa-playwright-saucedemo/actions/runs/39518081499), commit `2796db4`, 20/10/2026 às 20:55 BRT;
 - Resultado: `Success`; duração total de 43 s; job `e2e` concluído em 40 s;
