@@ -13,6 +13,8 @@ Este documento é o retrato público final da gestão do projeto no Jira. Ele pe
 | Tickets no escopo | 27 |
 | Histórias funcionais | 4 |
 | Casos de teste como subtarefas | 17 |
+| Perfil smoke | 4 casos críticos |
+| Perfil regression | 13 casos complementares |
 | Tarefas técnicas | 6 |
 | Casos aprovados | 17 / 17 |
 | Bugs confirmados | 0 |

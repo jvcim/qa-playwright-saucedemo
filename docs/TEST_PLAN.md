@@ -13,7 +13,7 @@ Login válido e inválido, obrigatoriedade, usuário bloqueado e logout; listage
 Pagamento real, carga, segurança, APIs internas, mobile e navegadores além de Chromium nesta etapa.
 
 ## Estratégia e tipos
-Testes E2E funcionais positivos e negativos; smoke para jornada crítica e regression para validações. Execução local e em CI. Falhas retêm screenshot, vídeo e trace.
+Testes E2E funcionais positivos e negativos; smoke para jornada crítica e regression para validações complementares. Nesta versão, as categorias são perfis de execução exclusivos: a suíte smoke contém 4 cenários mínimos (login válido, inventário disponível, operação básica do carrinho e checkout válido) e a suíte regression contém os outros 13 cenários. Execução local e em CI. Falhas retêm screenshot, vídeo e trace.
 
 ## Ferramentas e ambiente
 Playwright Test, TypeScript, Node.js 22, Chromium, GitHub Actions e SauceDemo público. Dados: credenciais públicas e cliente sintético.

@@ -11,7 +11,7 @@ test.beforeEach(async ({ page }) => {
   await expect(page).toHaveURL(/\/inventory\.html$/);
 });
 
-test('TC-INV-001 @regression inventário apresenta produtos', async ({ page }) => {
+test('TC-INV-001 @smoke inventário apresenta produtos', async ({ page }) => {
   const inventory = new InventoryPage(page);
   await expect(inventory.items.first()).toBeVisible();
   expect(await inventory.items.count()).toBeGreaterThan(0);
@@ -53,7 +53,7 @@ test('TC-CART-002 @regression item permanece no carrinho após navegar', async (
   await expect(cart.itemNames).toContainText(['Sauce Labs Backpack']);
 });
 
-test('TC-CART-003 @smoke carrinho exibe múltiplos produtos', async ({ page }) => {
+test('TC-CART-003 @regression carrinho exibe múltiplos produtos', async ({ page }) => {
   const inventory = new InventoryPage(page);
   const cart = new CartPage(page);
   await inventory.addProductByName('Sauce Labs Backpack');

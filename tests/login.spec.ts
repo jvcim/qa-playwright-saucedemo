@@ -40,7 +40,7 @@ test.describe('Autenticação', () => {
     await expect(login.error).toContainText('locked out');
   });
 
-  test('TC-AUTH-006 @smoke logout retorna à tela de login', async ({ page }) => {
+  test('TC-AUTH-006 @regression logout retorna à tela de login', async ({ page }) => {
     const login = new LoginPage(page);
     const inventory = new InventoryPage(page);
     await login.open();

@@ -53,6 +53,17 @@ A suíte foi ampliada com sete cenários e executada novamente em Chromium contr
 
 Nenhum defeito, falha de automação ou bloqueio foi observado nesta execução. Os avisos de cor emitidos pelo Node não afetaram o resultado.
 
+## Validação da classificação de suítes
+
+Após a revisão da estratégia, os filtros de execução foram validados em Chromium:
+
+| Perfil | Casos | Resultado | Duração |
+| --- | ---: | --- | ---: |
+| Smoke | 4 | 4 Passed, 0 Failed | 5,3 s |
+| Regression | 13 | 13 Passed, 0 Failed | 4,5 s |
+
+O conjunto smoke representa apenas a jornada mínima de disponibilidade. Os demais cenários pertencem ao perfil regression, incluindo logout, múltiplos itens, ordenações, validações negativas e resumo financeiro.
+
 ## Evidências
 
 - Relatório HTML: `playwright-report/index.html`;
