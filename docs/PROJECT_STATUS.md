@@ -17,7 +17,7 @@ Demonstrar um ciclo profissional de QA para a aplicação pública SauceDemo: pl
 
 - `README.md` — visão geral, uso e CI/CD;
 - `docs/TEST_PLAN.md` — estratégia e planejamento;
-- `docs/TEST_CATALOG.md` — catálogo dos 10 casos;
+- `docs/TEST_CATALOG.md` — catálogo dos 17 casos;
 - `docs/TRACEABILITY_MATRIX.md` — rastreabilidade de requisito a evidência;
 - `docs/EXECUTION_REPORT.md` — relatório da execução baseline de 16/10/2026;
 - `tests/login.spec.ts`, `tests/inventory.spec.ts`, `tests/checkout.spec.ts` — suíte E2E;
@@ -29,10 +29,9 @@ Demonstrar um ciclo profissional de QA para a aplicação pública SauceDemo: pl
 - Projeto de referência: [SauceDemo | QA Engineering Board](https://jvcimpavel.atlassian.net/jira/software/c/projects/SDQAE/boards/3) (`SDQAE`, company-managed);
 - Projeto histórico preservado: `SDQA` (team-managed);
 - Histórias: [SDQAE-1](https://jvcimpavel.atlassian.net/browse/SDQAE-1) Autenticação, [SDQAE-2](https://jvcimpavel.atlassian.net/browse/SDQAE-2) Inventário, [SDQAE-3](https://jvcimpavel.atlassian.net/browse/SDQAE-3) Checkout e [SDQAE-4](https://jvcimpavel.atlassian.net/browse/SDQAE-4) Carrinho;
-- Casos: SDQAE-5 a SDQAE-14 como subtarefas nativas, correspondentes a TC-AUTH-001 a TC-CHK-002;
+- Casos: SDQAE-5 a SDQAE-14 e SDQAE-21 a SDQAE-27 como subtarefas nativas, correspondentes a TC-AUTH-001 a TC-CHK-005;
 - Tarefas técnicas: SDQAE-15 a SDQAE-20;
-- Todos os 20 tickets SDQAE estão atribuídos a `jvcim.pavel@gmail.com`;
-- Casos preservam apenas labels funcionais: `test-case` e `smoke` ou `regression`.
+- O projeto não utiliza labels; smoke e regression são classificações documentais e tags do código Playwright.
 
 ## Mapeamento da migração
 
@@ -44,16 +43,17 @@ Demonstrar um ciclo profissional de QA para a aplicação pública SauceDemo: pl
 
 ## Atividades concluídas
 
-- Estrutura de automação e 10 cenários E2E implementados;
+- Estrutura de automação e 17 cenários E2E implementados;
 - Plano, catálogo, matriz e modelo de relatório criados;
 - Migração controlada para o projeto company-managed `SDQAE` concluída, preservando `SDQA`;
 - Quatro histórias funcionais cadastradas no Jira;
-- Dez casos de teste cadastrados como subtarefas nativas com detalhes, prioridade, classificação e resultado de execução `Pass` registrado;
+- Dezessete casos de teste cadastrados como subtarefas nativas com detalhes, prioridade, classificação e resultado de execução `Pass` registrado;
 - Seis tarefas técnicas independentes cadastradas;
 - Labels redundantes removidas e responsáveis atribuídos;
 - Matriz e catálogo atualizados com links reais do SDQAE.
 - Typecheck (`tsc --noEmit`) aprovado em 16/10/2026;
 - Primeira execução baseline em Chromium concluída: 10 Passed, 0 Failed, 0 Blocked e 0 Not Run em 12,5 s;
+- Ampliação de cobertura executada em 20/10/2026: 17 Passed, 0 Failed, 0 Blocked e 0 Not Run em 12,2 s;
 - Relatório HTML local gerado em `playwright-report/index.html`; nenhum artefato de falha foi produzido;
 - Resultados reais registrados nos Test Cases do Jira, separados do fluxo Kanban.
 - Repositório privado publicado em `https://github.com/jvcim/qa-playwright-saucedemo`;
@@ -66,7 +66,7 @@ Demonstrar um ciclo profissional de QA para a aplicação pública SauceDemo: pl
 
 ## Decisões e restrições
 
-- A suíte foi executada uma vez em Chromium e todos os 10 testes foram aprovados; não houve reexecução ou correção;
+- A suíte foi executada duas vezes em Chromium: o baseline com 10 testes e a ampliação com 17; todos foram aprovados, sem correção necessária;
 - Não há bugs ou integração automatizada Jira–GitHub confirmados; há evidências local e de CI no relatório HTML do Playwright;
 - O uso de `standard_user` e demais contas é limitado às credenciais públicas de demonstração da SauceDemo;
 - O Jira utilizado é exclusivamente a instância pessoal; `SDQAE` é o projeto operacional e `SDQA` é histórico.
@@ -74,7 +74,7 @@ Demonstrar um ciclo profissional de QA para a aplicação pública SauceDemo: pl
 
 ## Problemas conhecidos
 
-Nenhuma divergência comprovada foi identificada entre os 10 IDs do catálogo e a automação. A execução baseline não identificou falhas de aplicação, automação ou ambiente.
+Nenhuma divergência comprovada foi identificada entre os 17 IDs do catálogo e a automação. As execuções registradas não identificaram falhas de aplicação, automação ou ambiente.
 
 ## Próxima etapa recomendada
 

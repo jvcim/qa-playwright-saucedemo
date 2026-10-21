@@ -33,6 +33,26 @@ Execução baseline em Chromium com oito workers. O typecheck anterior (`tsc --n
 | TC-CHK-001 | SDQAE-13 | Finalizar compra simulada | Pass | 5,4 s | `playwright-report/index.html` | Confirmação de pedido exibida. |
 | TC-CHK-002 | SDQAE-14 | Nome obrigatório no checkout | Pass | 5,3 s | `playwright-report/index.html` | Validação de primeiro nome exibida. |
 
+## Ampliação de cobertura — 20/10/2026
+
+A suíte foi ampliada com sete cenários e executada novamente em Chromium contra `https://www.saucedemo.com/`. O typecheck (`tsc --noEmit`) foi aprovado antes da execução.
+
+| Planejados | Executados | Passed | Failed | Blocked | Not Run | Duração total |
+| ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 17 | 17 | 17 | 0 | 0 | 0 | 12,2 s |
+
+| ID | Ticket Jira | Cenário | Resultado | Duração | Evidência | Observações |
+| --- | --- | --- | --- | ---: | --- | --- |
+| TC-AUTH-006 | SDQAE-21 | Logout retorna à tela de login | Pass | 1,7 s | `playwright-report/index.html` | Tela de login exibida após encerrar sessão. |
+| TC-INV-003 | SDQAE-22 | Ordenação por preço crescente | Pass | 6,1 s | `playwright-report/index.html` | Preços em ordem ascendente. |
+| TC-CART-002 | SDQAE-23 | Item permanece no carrinho após navegar | Pass | 1,4 s | `playwright-report/index.html` | Backpack preservado ao retornar do carrinho. |
+| TC-CART-003 | SDQAE-24 | Carrinho exibe múltiplos produtos | Pass | 1,7 s | `playwright-report/index.html` | Badge e dois itens confirmados. |
+| TC-CHK-003 | SDQAE-25 | Sobrenome obrigatório no checkout | Pass | 6,2 s | `playwright-report/index.html` | Mensagem de sobrenome obrigatório validada. |
+| TC-CHK-004 | SDQAE-26 | CEP obrigatório no checkout | Pass | 5,9 s | `playwright-report/index.html` | Mensagem de CEP obrigatório validada. |
+| TC-CHK-005 | SDQAE-27 | Resumo financeiro corresponde ao carrinho | Pass | 6,5 s | `playwright-report/index.html` | Itens, subtotal, taxa e total consistentes. |
+
+Nenhum defeito, falha de automação ou bloqueio foi observado nesta execução. Os avisos de cor emitidos pelo Node não afetaram o resultado.
+
 ## Evidências
 
 - Relatório HTML: `playwright-report/index.html`;

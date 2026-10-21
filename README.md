@@ -11,16 +11,16 @@ Demonstrar planejamento de testes, automação E2E, cenários positivos e negati
 - GitHub Actions (CI)
 - Relatório HTML, screenshot, vídeo e trace em caso de falha
 
-## Cobertura inicial
+## Cobertura automatizada
 | Módulo | Testes | Cenários |
 |---|---:|---|
-| Login | 5 | Válido, senha inválida, campos obrigatórios, bloqueado |
-| Inventário | 2 | Listagem e ordenação |
-| Carrinho | 1 | Adição e remoção |
-| Checkout | 2 | Conclusão simulada e validação obrigatória |
-| **Total** | **10** | **Suite inicial planejada** |
+| Login | 6 | Válido, senha inválida, campos obrigatórios, bloqueado e logout |
+| Inventário | 3 | Listagem, ordenação por nome e por preço |
+| Carrinho | 3 | Adição/remoção, persistência e múltiplos itens |
+| Checkout | 5 | Conclusão simulada, obrigatoriedade e resumo financeiro |
+| **Total** | **17** | **Suite E2E executada** |
 
-Os casos e a estratégia estão detalhados em [`docs/TEST_PLAN.md`](docs/TEST_PLAN.md), [`docs/TEST_CATALOG.md`](docs/TEST_CATALOG.md) e [`docs/TRACEABILITY_MATRIX.md`](docs/TRACEABILITY_MATRIX.md). O acompanhamento de execução está em [`docs/EXECUTION_REPORT.md`](docs/EXECUTION_REPORT.md), e o contexto de continuidade em [`docs/PROJECT_STATUS.md`](docs/PROJECT_STATUS.md). Um modelo de registro de defeitos está em [`docs/BUG_REPORT_TEMPLATE.md`](docs/BUG_REPORT_TEMPLATE.md).
+Para uma leitura executiva, veja o [caso de estudo do portfólio](docs/PORTFOLIO_CASE_STUDY.md). Os casos e a estratégia estão detalhados em [`docs/TEST_PLAN.md`](docs/TEST_PLAN.md), [`docs/TEST_CATALOG.md`](docs/TEST_CATALOG.md) e [`docs/TRACEABILITY_MATRIX.md`](docs/TRACEABILITY_MATRIX.md). O acompanhamento de execução está em [`docs/EXECUTION_REPORT.md`](docs/EXECUTION_REPORT.md), e o contexto de continuidade em [`docs/PROJECT_STATUS.md`](docs/PROJECT_STATUS.md). Um modelo de registro de defeitos está em [`docs/BUG_REPORT_TEMPLATE.md`](docs/BUG_REPORT_TEMPLATE.md).
 
 ## Jira
 O backlog e o Kanban de referência estão em [SauceDemo | QA Engineering Board](https://jvcimpavel.atlassian.net/jira/software/c/projects/SDQAE/boards/3). As histórias possuem subtarefas nativas para os casos de teste, organizadas por tipo de item no quadro. O projeto anterior `SDQA` foi preservado como histórico da migração. Não há integração automatizada Jira–GitHub configurada neste repositório.
@@ -69,12 +69,12 @@ São utilizadas exclusivamente credenciais **públicas de teste** do SauceDemo, 
 O workflow executa a checagem de TypeScript e a suíte Playwright em cada push ou pull request na branch `main`. A [run #2 do GitHub Actions](https://github.com/jvcim/qa-playwright-saucedemo/actions/runs/39518081499) foi aprovada em 43 s e publicou o relatório HTML como artefato. O repositório permanece privado nesta etapa.
 
 ## Estado da execução
-**Baseline local validado em 16/10/2026:** 10 testes executados no Chromium, 10 Passed, 0 Failed, em 12,5 s. O relatório HTML local é gerado em `playwright-report/index.html`; detalhes rastreáveis estão em `docs/EXECUTION_REPORT.md`.
+**Execuções locais validadas:** baseline de 16/10/2026 com 10 Passed em 12,5 s; ampliação de 20/10/2026 com 17 testes no Chromium, 17 Passed e 0 Failed em 12,2 s. O relatório HTML local é gerado em `playwright-report/index.html`; detalhes rastreáveis estão em `docs/EXECUTION_REPORT.md`.
 
 ## Roadmap
 - [x] Executar e estabilizar a primeira pipeline CI
 - [x] Capturar evidência real do relatório HTML no README
-- [ ] Expandir testes de cálculo de subtotal e ordenação por preço
+- [x] Expandir testes de cálculo de subtotal e ordenação por preço
 - [ ] Incluir execução Firefox e WebKit
 - [ ] Adicionar histórico de bugs reais identificados no ambiente demonstrativo
 

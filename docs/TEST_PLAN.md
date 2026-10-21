@@ -1,13 +1,13 @@
 # Plano de Testes — SauceDemo
 
 ## Identificação
-Portfólio de QA com Playwright e TypeScript para a aplicação pública SauceDemo. Responsável: João Vítor Cim de Oliveira. Estado: planejamento; nenhuma execução registrada.
+Portfólio de QA com Playwright e TypeScript para a aplicação pública SauceDemo. Responsável: João Vítor Cim de Oliveira. Estado: ativo; execuções reais registradas no relatório de execução.
 
 ## Objetivo
 Verificar os fluxos críticos de autenticação, inventário, carrinho e checkout simulado, produzindo automação reproduzível, rastreabilidade e evidências.
 
 ## Escopo
-Login válido e inválido, obrigatoriedade, usuário bloqueado; listagem e ordenação de produtos; adição/remoção do carrinho; checkout e validação de nome.
+Login válido e inválido, obrigatoriedade, usuário bloqueado e logout; listagem e ordenação de produtos por nome e preço; adição, remoção, persistência e múltiplos itens no carrinho; checkout, obrigatoriedade dos dados e consistência do resumo financeiro.
 
 ## Fora do escopo
 Pagamento real, carga, segurança, APIs internas, mobile e navegadores além de Chromium nesta etapa.

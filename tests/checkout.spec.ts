@@ -31,3 +31,33 @@ test('TC-CHK-002 @regression nome obrigatório no checkout', async ({ page }) =>
   await checkout.fillCustomer('', checkoutCustomer.lastName, checkoutCustomer.postalCode);
   await expect(checkout.error).toContainText('First Name is required');
 });
+
+test('TC-CHK-003 @regression sobrenome obrigatório no checkout', async ({ page }) => {
+  const checkout = new CheckoutPage(page);
+  await checkout.fillCustomer(checkoutCustomer.firstName, '', checkoutCustomer.postalCode);
+  await expect(checkout.error).toContainText('Last Name is required');
+});
+
+test('TC-CHK-004 @regression CEP obrigatório no checkout', async ({ page }) => {
+  const checkout = new CheckoutPage(page);
+  await checkout.fillCustomer(checkoutCustomer.firstName, checkoutCustomer.lastName, '');
+  await expect(checkout.error).toContainText('Postal Code is required');
+});
+
+test('TC-CHK-005 @regression resumo financeiro corresponde ao carrinho', async ({ page }) => {
+  const inventory = new InventoryPage(page);
+  const cart = new CartPage(page);
+  const checkout = new CheckoutPage(page);
+  await page.goto('/inventory.html');
+  await inventory.addProductByName('Sauce Labs Bike Light');
+  await expect(inventory.cartBadge).toHaveText('2');
+  await inventory.openCart();
+  await expect(cart.items).toHaveCount(2);
+  await cart.checkout();
+  await checkout.fillCustomer(checkoutCustomer.firstName, checkoutCustomer.lastName, checkoutCustomer.postalCode);
+  await expect(checkout.summaryItems).toHaveCount(2);
+  const subtotal = Number((await checkout.summarySubtotal.textContent())?.replace('Item total: $', ''));
+  const tax = Number((await checkout.summaryTax.textContent())?.replace('Tax: $', ''));
+  const total = Number((await checkout.summaryTotal.textContent())?.replace('Total: $', ''));
+  expect(total).toBeCloseTo(subtotal + tax, 2);
+});

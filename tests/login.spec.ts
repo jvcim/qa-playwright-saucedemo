@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { LoginPage } from '../pages/login.page';
+import { InventoryPage } from '../pages/inventory.page';
 import { users } from '../utils/test-data';
 
 test.describe('Autenticação', () => {
@@ -37,5 +38,15 @@ test.describe('Autenticação', () => {
     await login.open();
     await login.login(users.locked.username, users.locked.password);
     await expect(login.error).toContainText('locked out');
+  });
+
+  test('TC-AUTH-006 @smoke logout retorna à tela de login', async ({ page }) => {
+    const login = new LoginPage(page);
+    const inventory = new InventoryPage(page);
+    await login.open();
+    await login.login(users.standard.username, users.standard.password);
+    await inventory.logout();
+    await expect(page).toHaveURL(/\/$/);
+    await expect(login.loginButton).toBeVisible();
   });
 });
