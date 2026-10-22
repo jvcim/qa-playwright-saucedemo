@@ -64,9 +64,22 @@ Após a revisão da estratégia, os filtros de execução foram validados em Chr
 
 O conjunto smoke representa apenas a jornada mínima de disponibilidade. Os demais cenários pertencem ao perfil regression, incluindo logout, múltiplos itens, ordenações, validações negativas e resumo financeiro.
 
+## Revalidação após aprimoramento técnico — 22/10/2026
+
+Após fortalecer as asserções de inventário e do resumo financeiro, a suíte completa foi executada novamente em Chromium. O typecheck (`tsc --noEmit`) foi aprovado antes da execução.
+
+| Planejados | Executados | Passed | Failed | Blocked | Not Run | Duração total |
+| ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 17 | 17 | 17 | 0 | 0 | 0 | 13,7 s |
+
+O `TC-CHK-005` confirmou os dois itens e seus preços no resumo, calculou o subtotal independentemente em centavos e validou a composição `subtotal + taxa = total`, sem pressupor a regra de tributação. O `TC-INV-001` passou a confirmar a disponibilidade das seis entradas do catálogo e das respectivas ações de adição ao carrinho.
+
+Uma captura fiel do relatório dessa execução foi versionada em [`docs/assets/playwright-report-17-tests.png`](assets/playwright-report-17-tests.png). Não foram observados defeitos, bloqueios ou falhas de automação.
+
 ## Evidências
 
 - Relatório HTML: `playwright-report/index.html`;
+- Captura versionada do relatório aprovado: `docs/assets/playwright-report-17-tests.png`;
 - Resumo técnico da última execução: `test-results/.last-run.json`;
 - Não houve screenshots, vídeos ou traces de falha, pois todos os testes passaram e a configuração os retém somente em falhas.
 

@@ -3,6 +3,7 @@ import { LoginPage } from '../pages/login.page';
 import { InventoryPage } from '../pages/inventory.page';
 import { CartPage } from '../pages/cart.page';
 import { users } from '../utils/test-data';
+import { parseUsdToCents } from '../utils/money';
 
 test.beforeEach(async ({ page }) => {
   const login = new LoginPage(page);
@@ -13,8 +14,9 @@ test.beforeEach(async ({ page }) => {
 
 test('TC-INV-001 @smoke inventário apresenta produtos', async ({ page }) => {
   const inventory = new InventoryPage(page);
-  await expect(inventory.items.first()).toBeVisible();
-  expect(await inventory.items.count()).toBeGreaterThan(0);
+  await expect(inventory.items).toHaveCount(6);
+  await expect(inventory.productByName('Sauce Labs Backpack')).toBeVisible();
+  await expect(inventory.addToCartButtons).toHaveCount(6);
 });
 
 test('TC-INV-002 @regression ordenação por nome Z-A', async ({ page }) => {
@@ -28,7 +30,7 @@ test('TC-INV-002 @regression ordenação por nome Z-A', async ({ page }) => {
 test('TC-INV-003 @regression ordenação por preço crescente', async ({ page }) => {
   const inventory = new InventoryPage(page);
   await inventory.sortSelect.selectOption('lohi');
-  const prices = (await inventory.prices.allTextContents()).map((value) => Number(value.replace('$', '')));
+  const prices = (await inventory.prices.allTextContents()).map(parseUsdToCents);
   expect(prices.length).toBeGreaterThan(1);
   expect(prices).toEqual([...prices].sort((a, b) => a - b));
 });
@@ -46,10 +48,12 @@ test('TC-CART-002 @regression item permanece no carrinho após navegar', async (
   const cart = new CartPage(page);
   await inventory.addProductByName('Sauce Labs Backpack');
   await inventory.openCart();
+  await expect(cart.items).toHaveCount(1);
   await expect(cart.itemNames).toContainText(['Sauce Labs Backpack']);
   await cart.continueShopping();
   await expect(inventory.cartBadge).toHaveText('1');
   await inventory.openCart();
+  await expect(cart.items).toHaveCount(1);
   await expect(cart.itemNames).toContainText(['Sauce Labs Backpack']);
 });
 
