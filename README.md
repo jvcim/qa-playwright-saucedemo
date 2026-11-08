@@ -14,7 +14,7 @@ Projeto de portfólio de QA Automation para a aplicação pública de demonstra�
 | Indicador | Evidência |
 | --- | --- |
 | Cenários E2E | 17, distribuídos em autenticação, inventário, carrinho e checkout |
-| Última validação local documentada | 17 Passed, 0 Failed, em 13,7 s no Chromium (22/10/2026) |
+| Última validação local documentada | 17 Passed, 0 Failed, em 19,6 s no Chromium (08/11/2026) |
 | Perfis de execução | 4 smoke e 13 regression |
 | Qualidade técnica | TypeScript validado com `tsc --noEmit` |
 | CI | Workflow Playwright executado em push e pull request para `main` |

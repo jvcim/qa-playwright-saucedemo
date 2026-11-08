@@ -76,6 +76,18 @@ O `TC-CHK-005` confirmou os dois itens e seus preços no resumo, calculou o subt
 
 Uma captura fiel do relatório dessa execução foi versionada em [`docs/assets/playwright-report-17-tests.png`](assets/playwright-report-17-tests.png). Não foram observados defeitos, bloqueios ou falhas de automação.
 
+## Revalidação final — 08/11/2026
+
+O typecheck (`tsc --noEmit`) foi aprovado. Na primeira tentativa da suíte com oito workers, parte das navegações para o ambiente público recebeu `net::ERR_CONNECTION_RESET`; como não houve interação com a aplicação nesses casos, o evento foi classificado como indisponibilidade transitória do ambiente externo, e não como defeito da aplicação ou da automação.
+
+A suíte foi repetida de forma serial, com `npx playwright test --workers=1 --reporter=line`, para isolar a variação de conectividade:
+
+| Planejados | Executados | Passed | Failed | Blocked | Not Run | Duração total |
+| ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 17 | 17 | 17 | 0 | 0 | 0 | 19,6 s |
+
+Nenhum defeito foi registrado: a reexecução serial validou os 17 cenários contra o SauceDemo e não produziu falhas funcionais ou de automação.
+
 ## Evidências
 
 - Relatório HTML: `playwright-report/index.html`;
